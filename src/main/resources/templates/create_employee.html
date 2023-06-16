@@ -42,7 +42,6 @@
                         <select class="form-select form-select-lg mb-3" th:field="*{employee.deptName}">
                             <option id="name" th:each = "dept: ${department}" th:value="${dept.department}" th:text="${dept.department}" ></option>
                         </select>
-<!--                        <input type="text" name="dept" th:field="*{employee.deptName}" class="form-control" th:value="${name}"/><br>-->
 
                     </div>
 
