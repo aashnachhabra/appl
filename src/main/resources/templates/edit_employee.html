@@ -38,7 +38,7 @@
                         <label> Email Id</label>
                         <input type="text" name="email" th:field="*{employee.emailId}" class="form-control" placeholder="Enter Email"/><br>
                         <label>Select Department : </label>
-                        <select class="form-select form-select-lg mb-3" th:field="*{employee.deptName}">
+                        <select class="form-select form-select-lg mb-3" style="width:100%;padding:2%" th:field="*{employee.deptName}">
                             <option id="name" th:each = "dept: ${department}" th:value="${dept.department}" th:text="${dept.department}" ></option>
                         </select>
                     </div>

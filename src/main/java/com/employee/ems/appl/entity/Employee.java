@@ -20,6 +20,7 @@ public class Employee {
     @Column(name = "Department")
     private String deptName;
 
+
     public String getDeptName() {
         return deptName;
     }
