@@ -38,7 +38,7 @@ public class EmployeeController {
 
         model.addAttribute("employees",userService.getAllEmployees());
 
-        return "employees";
+        return "redirect:/employees";
     }
 
 
