@@ -16,18 +16,15 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "enabled", nullable = false)
-    private boolean enabled;
 
     // Constructors, getters, and setters
 
     public User() {
     }
 
-    public User(String username, String password, boolean enabled) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
-        this.enabled = enabled;
     }
 
     // Getters and Setters
@@ -56,11 +53,4 @@ public class User {
         this.password = password;
     }
 
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
 }
