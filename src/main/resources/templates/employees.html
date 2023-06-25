@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeLeaf.org">
+<html xmlns:th="http://www.thymeLeaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Employee Management System</title>
@@ -52,7 +52,7 @@
             <td th:text = "${employee.emailId}"></td>
             <td th:text= "${employee.deptName}"></td>
             <td>
-                <a th:href = "@{/employees/edit/{id} (id=${employee.id})}" class ="btn btn-primary">Update</a>
+                <a th:href = "@{/employees/edit/{id} (id=${employee.id})}" sec:authorize="hasRole('ADMIN')" class ="btn btn-primary">Update</a>
                 <a th:href = "@{/employees/{id} (id=${employee.id})}" class ="btn btn-danger">Delete</a>
                 <a th:href = "@{/employees/view/{id} (id=${employee.id})}" class ="btn btn-primary">Details</a>
             </td>

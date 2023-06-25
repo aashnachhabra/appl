@@ -1,6 +1,7 @@
 package com.employee.ems.appl.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -16,8 +17,17 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<String> roles;
 
-    // Constructors, getters, and setters
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+// Constructors, getters, and setters
 
     public User() {
     }
