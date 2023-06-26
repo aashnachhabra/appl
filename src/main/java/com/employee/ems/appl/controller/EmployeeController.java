@@ -18,38 +18,19 @@ public class EmployeeController {
     @Autowired
     private UserService userService;
 
+
     public EmployeeController(UserService userService) {
         super();
         this.userService = userService;
     }
+
+
     @GetMapping("/employees")
     public String listEmployees(Model model) {
 
         model.addAttribute("employees",userService.getAllEmployees());
 
         return "employees";
-    }
-    @GetMapping("/login")
-    public String login() {
-
-        return "login";
-    }
-    @GetMapping("/")
-    public String home(Model model) {
-
-        model.addAttribute("employees",userService.getAllEmployees());
-
-        return "redirect:/employees";
-    }
-
-
-    @GetMapping("/logout")
-    public String logout() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication != null) {
-            SecurityContextHolder.getContext().setAuthentication(null);
-        }
-        return "redirect:/login?logout";
     }
     @GetMapping("/employees/new")
     public String createEmployee(Model model){
